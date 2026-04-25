@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LENSTORE - HayDay Tools</title>
+<title>LENSTORE - HayDay Shop</title>
 
 <style>
 * {
@@ -14,48 +14,43 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
+  background: #0f172a;
   color: white;
-  text-align: center;
 }
 
 /* CONTAINER */
 .container {
   max-width: 420px;
   margin: auto;
-  padding: 20px;
+  padding: 15px;
 }
 
 /* HEADER */
-.logo {
-  width: 100px;
-  border-radius: 50%;
-  margin-top: 20px;
+.header {
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-h1 {
-  margin-top: 15px;
+.header h1 {
   font-size: 26px;
-  font-weight: bold;
+  color: #22c55e;
 }
 
-.tagline {
+.header p {
   font-size: 14px;
   color: #cbd5f5;
-  margin-bottom: 20px;
 }
 
-/* HERO IMAGE */
-.hero {
+/* HERO */
+.hero img {
   width: 100%;
   border-radius: 12px;
-  margin-bottom: 20px;
 }
 
 /* BUTTON */
 .btn {
   display: block;
-  width: 100%;
+  text-align: center;
   padding: 14px;
   margin: 10px 0;
   border-radius: 10px;
@@ -68,44 +63,57 @@ h1 {
   transform: scale(1.03);
 }
 
-/* BUTTON COLORS */
 .wa {
   background: #25D366;
-  color: white;
 }
 
 .channel {
   background: #128C7E;
-  color: white;
 }
 
 .tiktok {
   background: black;
-  color: white;
 }
 
 /* SECTION */
 .section {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .section h2 {
-  margin-bottom: 10px;
   font-size: 18px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-/* GALLERY */
-.gallery img {
+/* PRODUCT IMAGE */
+.product img {
   width: 100%;
-  border-radius: 10px;
-  margin: 8px 0;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
-/* FOOTER */
-.footer {
-  margin-top: 30px;
-  font-size: 12px;
-  color: #94a3b8;
+/* CTA FIXED */
+.cta-fixed {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #25D366;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* SPACING */
+.spacer {
+  height: 70px;
 }
 </style>
 
@@ -114,28 +122,46 @@ h1 {
 
 <div class="container">
 
-  <!-- LOGO -->
-  <img src="logo.png" class="logo">
+  <!-- HEADER -->
+  <div class="header">
+    <h1>LENSTORE</h1>
+    <p>HayDay Tools • Gold • Jasa • Promo Harian</p>
+  </div>
 
-  <h1>LENSTORE</h1>
-  <p class="tagline">Jual Tools HayDay Murah & Aman</p>
+  <!-- HERO (PAKAI GAMBAR TERKUAT) -->
+  <div class="hero">
+    <img src="produk1.png">
+  </div>
 
-  <!-- HERO IMAGE -->
-  <img src="hero.jpg" class="hero">
-
-  <!-- CTA BUTTONS -->
+  <!-- CTA UTAMA -->
   <a href="https://wa.me/628XXXXXXXXXX" class="btn wa">💬 Chat WhatsApp</a>
   <a href="https://whatsapp.com/channel/XXXXX" class="btn channel">📢 Saluran WhatsApp</a>
   <a href="https://tiktok.com/@username" class="btn tiktok">🎵 TikTok</a>
 
   <!-- PRODUK -->
   <div class="section">
-    <h2>Produk Kami</h2>
-    <div class="gallery">
-      <img src="produk1.jpg">
-      <img src="produk2.jpg">
-      <img src="produk3.jpg">
+    <h2>🔥 Produk & Promo</h2>
+
+    <div class="product">
+      <img src="produk2.png">
+      <img src="produk3.png">
+      <img src="produk4.png">
+      <img src="produk5.png">
     </div>
+  </div>
+
+</div>
+
+<!-- CTA FIXED (SELALU MUNCUL DI BAWAH) -->
+<a href="https://wa.me/628XXXXXXXXXX" class="cta-fixed">
+  🚀 Order Sekarang via WhatsApp
+</a>
+
+<div class="spacer"></div>
+
+</body>
+</html>
+.
   </div>
 
   <!-- KEUNGGULAN -->
