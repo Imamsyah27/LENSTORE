@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LENSTORE - HayDay Shop</title>
+<title>LENSTORE</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 
 <style>
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +21,7 @@ body {
   font-family: 'Poppins', sans-serif;
   background: url('background.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #f1f5f9;
+  color: white;
   overflow-x: hidden;
 }
 
@@ -35,6 +37,174 @@ body::before {
 /* FLOATING ICONS */
 .floating {
   position: fixed;
+  font-size: 26px;
+  opacity: 0.2;
+  z-index: 1;
+  animation: float 8s ease-in-out infinite;
+}
+
+.f1 { left: 5%; top: 20%; }
+.f2 { left: 80%; top: 25%; animation-delay: 2s; }
+.f3 { left: 15%; top: 75%; animation-delay: 4s; }
+.f4 { left: 70%; top: 80%; animation-delay: 6s; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+/* CONTAINER */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 900;
+  color: #ff4da6; /* PINK */
+  text-shadow: 0 0 12px rgba(255,77,166,0.7);
+}
+
+.header p {
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+/* HERO */
+.hero img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  margin: 10px 0;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+.wa { background: #25D366; color: white; }
+.channel { background: #0ea5e9; color: white; }
+.tiktok { background: black; color: white; }
+
+/* SECTION */
+.section {
+  margin-top: 25px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* PRODUCT */
+.product img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* CTA FIX */
+.cta {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ff4da6, #ff1f7a);
+  text-align: center;
+  padding: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+/* SPACER */
+.spacer {
+  height: 70px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ICON GERAK -->
+<div class="floating f1">🌾</div>
+<div class="floating f2">🐄</div>
+<div class="floating f3">🐔</div>
+<div class="floating f4">🌽</div>
+
+<div class="container">
+
+  <div class="header">
+    <h1>LENSTORE</h1>
+    <p>HayDay Tools • Gold • Jasa • Promo Harian</p>
+  </div>
+
+  <div class="hero">
+    <img src="produk1.png">
+  </div>
+
+  <a href="https://wa.me/6285269368022" class="btn wa">💬 Chat WhatsApp</a>
+  <a href="#" class="btn channel">📢 Saluran WhatsApp</a>
+  <a href="#" class="btn tiktok">🎵 TikTok</a>
+
+  <div class="section">
+    <h2>🔥 Produk & Promo</h2>
+    <div class="product">
+      <img src="produk2.png">
+      <img src="produk3.png">
+      <img src="produk4.png">
+      <img src="produk5.png">
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Kenapa Pilih Kami?</h2>
+    <p>✔ Fast Respon</p>
+    <p>✔ Aman & Terpercaya</p>
+    <p>✔ Harga Murah</p>
+  </div>
+
+</div>
+
+<a href="https://wa.me/6285269368022" class="cta">
+🚀 Order Sekarang
+</a>
+
+<div class="spacer"></div>
+
+</body>
+</html>  position: fixed;
   font-size: 28px;
   opacity: 0.15;
   animation: float 12s linear infinite;
