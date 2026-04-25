@@ -27,22 +27,22 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0,0,0,0.2);
   z-index: -1;
 }
 
-/* CONTAINER */
+/* CONTAINER (70% + SUPER TRANSPARAN) */
 .container {
-  max-width: 420px;
-  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  margin: 30px auto;
   padding: 20px;
 
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.05); /* sangat transparan */
+  backdrop-filter: blur(6px);
 
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 /* HEADER */
@@ -55,19 +55,18 @@ body::before {
   font-family: 'Playfair Display', serif;
   font-size: 34px;
   font-weight: 900;
-  color: #ff4da6; /* PINK */
-  text-shadow: 0 0 10px rgba(255,77,166,0.6);
+  color: #ff4da6;
 }
 
 .header p {
   font-size: 14px;
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 
 /* HERO */
 .hero img {
   width: 100%;
-  border-radius: 16px;
+  border-radius: 14px;
   margin-bottom: 10px;
 }
 
@@ -75,21 +74,17 @@ body::before {
 .btn {
   display: block;
   text-align: center;
-  padding: 14px;
-  margin: 10px 0;
-  border-radius: 12px;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.2s;
+  font-size: 14px;
 }
 
-.btn:hover {
-  transform: scale(1.03);
-}
-
-.wa { background: #25D366; color: white; }
-.channel { background: #0ea5e9; color: white; }
-.tiktok { background: black; color: white; }
+.wa { background: #ff4da6; color: white; }
+.channel { background: #ec4899; color: white; }
+.tiktok { background: #be185d; color: white; }
 
 /* SECTION */
 .section {
@@ -101,11 +96,46 @@ body::before {
   margin-bottom: 10px;
 }
 
-/* PRODUCT */
+/* GRID MADING */
+.product {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* FOTO KECIL */
 .product img {
   width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.product img:hover {
+  transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
   border-radius: 12px;
-  margin-bottom: 10px;
+}
+
+/* TEXT */
+.section p {
+  text-align: center;
+  font-size: 14px;
 }
 
 /* CTA */
@@ -113,15 +143,15 @@ body::before {
   position: fixed;
   bottom: 0;
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(135deg, #ff4da6, #ff1f7a);
   text-align: center;
   padding: 14px;
   font-weight: bold;
-  text-decoration: none;
   color: white;
+  text-decoration: none;
 }
 
 /* SPACER */
@@ -129,7 +159,6 @@ body::before {
   height: 70px;
 }
 </style>
-
 </head>
 
 <body>
@@ -142,20 +171,21 @@ body::before {
   </div>
 
   <div class="hero">
-    <img src="produk1.png" alt="">
+    <img src="produk1.png">
   </div>
 
-  <a href="https://wa.me/6285269368022" class="btn wa">💬 Chat WhatsApp</a>
-  <a href="#" class="btn channel">📢 Saluran WhatsApp</a>
-  <a href="#" class="btn tiktok">🎵 TikTok</a>
+  <a href="https://wa.me/6285269368022" class="btn wa">Chat WhatsApp</a>
+  <a href="#" class="btn channel">Saluran WhatsApp</a>
+  <a href="#" class="btn tiktok">TikTok</a>
 
   <div class="section">
     <h2>🔥 Produk & Promo</h2>
+
     <div class="product">
-      <img src="produk2.png">
-      <img src="produk3.png">
-      <img src="produk4.png">
-      <img src="produk5.png">
+      <img src="produk2.png" onclick="openImg(this.src)">
+      <img src="produk3.png" onclick="openImg(this.src)">
+      <img src="produk4.png" onclick="openImg(this.src)">
+      <img src="produk5.png" onclick="openImg(this.src)">
     </div>
   </div>
 
@@ -168,11 +198,27 @@ body::before {
 
 </div>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+  <img id="lightbox-img">
+</div>
+
 <a href="https://wa.me/6285269368022" class="cta">
-🚀 Order Sekarang
+Order Sekarang
 </a>
 
 <div class="spacer"></div>
+
+<script>
+function openImg(src){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeImg(){
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 
 </body>
 </html>
