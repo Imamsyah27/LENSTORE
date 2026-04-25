@@ -7,6 +7,8 @@
 
 
   <style>
+@i
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 * {
@@ -16,16 +18,36 @@
   font-family: 'Poppins', sans-serif;
 }
 
+/* BACKGROUND UTAMA (FIXED) */
 body {
-  background: radial-gradient(circle at top, #1e293b, #020617);
-  color: #f1f5f9;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #0f172a;
 }
 
-/* CONTAINER */
+/* OVERLAY GELAP TIPIS (BIAR KONTRAS NAIK) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+/* CONTAINER GLASS */
 .container {
   max-width: 420px;
-  margin: auto;
+  margin: 20px auto;
   padding: 20px;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
 }
 
 /* HEADER */
@@ -44,7 +66,7 @@ body {
 
 .header p {
   font-size: 14px;
-  color: #94a3b8;
+  color: #e2e8f0;
 }
 
 /* HERO */
@@ -70,7 +92,6 @@ body {
 
 .btn:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
 /* BUTTON COLORS */
@@ -99,7 +120,7 @@ body {
   margin-bottom: 15px;
   text-align: center;
   font-weight: 700;
-  color: #e2e8f0;
+  color: #f1f5f9;
 }
 
 /* PRODUCT IMAGE */
@@ -119,7 +140,7 @@ body {
 .section p {
   text-align: center;
   margin: 6px 0;
-  color: #cbd5f5;
+  color: #e2e8f0;
 }
 
 /* CTA FIXED */
@@ -146,7 +167,7 @@ body {
   margin-top: 30px;
   text-align: center;
   font-size: 12px;
-  color: #64748b;
+  color: #cbd5f5;
 }
 
 /* SPACING */
