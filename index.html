@@ -6,8 +6,6 @@
 <title>LENSTORE</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-
-<!-- ICON LIBRARY -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
@@ -17,7 +15,6 @@
   box-sizing: border-box;
 }
 
-/* BACKGROUND */
 body {
   font-family: 'Poppins', sans-serif;
   background: url('background.jpg') no-repeat center center fixed;
@@ -25,7 +22,6 @@ body {
   color: white;
 }
 
-/* OVERLAY */
 body::before {
   content: "";
   position: fixed;
@@ -63,7 +59,6 @@ body::before {
 
 .header p {
   font-size: 14px;
-  color: #f1f5f9;
 }
 
 /* HERO */
@@ -85,17 +80,11 @@ body::before {
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
 }
 
-.btn i {
-  font-size: 16px;
-}
-
-/* COLORS */
-.wa { background: #ff4da6; color: white; }
-.channel { background: #ec4899; color: white; }
-.tiktok { background: #be185d; color: white; }
+.wa { background: #ff4da6; }
+.channel { background: #ec4899; }
+.tiktok { background: #be185d; }
 
 /* SECTION */
 .section {
@@ -120,14 +109,45 @@ body::before {
   cursor: pointer;
 }
 
+/* PAYMENT */
+.payment {
+  text-align: center;
+}
+
+.qris {
+  width: 160px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* DOWNLOAD BUTTON */
+.download-btn {
+  margin-top: 10px;
+  display: inline-block;
+  background: #ff4da6;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+}
+
+/* TRUST */
+.trust p {
+  text-align: center;
+  font-size: 14px;
+}
+
 /* LIGHTBOX */
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   display: none;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .lightbox img {
@@ -135,20 +155,12 @@ body::before {
   border-radius: 12px;
 }
 
-/* PAYMENT */
-.payment {
-  text-align: center;
-}
-
-.payment p {
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.qris {
-  width: 180px;
+.close {
   margin-top: 10px;
-  border-radius: 10px;
+  background: #ff4da6;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* CTA */
@@ -163,11 +175,10 @@ body::before {
   text-align: center;
   padding: 14px;
   font-weight: bold;
-  color: white;
   text-decoration: none;
+  color: white;
 }
 
-/* SPACER */
 .spacer {
   height: 70px;
 }
@@ -187,13 +198,12 @@ body::before {
     <img src="produk1.png">
   </div>
 
-  <!-- BUTTON -->
   <a href="https://wa.me/6285269368022" class="btn wa">
-    <i class="fab fa-whatsapp"></i> Chat WhatsApp
+    <i class="fab fa-whatsapp"></i> WhatsApp
   </a>
 
   <a href="#" class="btn channel">
-    <i class="fa-solid fa-bullhorn"></i> Saluran WhatsApp
+    <i class="fa-solid fa-bullhorn"></i> Saluran
   </a>
 
   <a href="#" class="btn tiktok">
@@ -202,7 +212,7 @@ body::before {
 
   <!-- PRODUK -->
   <div class="section">
-    <h2>🔥 Produk & Promo</h2>
+    <h2>Produk & Promo</h2>
     <div class="product">
       <img src="produk2.png" onclick="openImg(this.src)">
       <img src="produk3.png" onclick="openImg(this.src)">
@@ -215,7 +225,21 @@ body::before {
   <div class="section payment">
     <h2>Metode Pembayaran</h2>
     <p>DANA / SHOPEE PAY / BRI</p>
-    <img src="QRIS.png" class="qris">
+
+    <img src="QRIS.png" class="qris" onclick="openImg(this.src)">
+
+    <br>
+    <a href="QRIS.png" download class="download-btn">
+      Download QRIS
+    </a>
+  </div>
+
+  <!-- TRUST -->
+  <div class="section trust">
+    <h2>Kenapa Pilih LENSTORE?</h2>
+    <p>✔ Fast Respon</p>
+    <p>✔ Aman & Terpercaya</p>
+    <p>✔ Harga Murah</p>
   </div>
 
 </div>
@@ -223,6 +247,7 @@ body::before {
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeImg()">
   <img id="lightbox-img">
+  <div class="close">Tutup</div>
 </div>
 
 <a href="https://wa.me/6285269368022" class="cta">
@@ -236,6 +261,7 @@ function openImg(src){
   document.getElementById("lightbox").style.display = "flex";
   document.getElementById("lightbox-img").src = src;
 }
+
 function closeImg(){
   document.getElementById("lightbox").style.display = "none";
 }
